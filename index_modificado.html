@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carnaval de Brasil 2026 - La Mayor Fiesta del Mundo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --verde: #009C3B;
+            --amarillo: #FFDF00;
+            --azul: #002776;
+            --dorado: #FFB81C;
+            --rosa: #E31C79;
+            --morado: #6A0DAD;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header y Navegación */
+        header {
+            background: linear-gradient(to right, var(--verde), var(--amarillo), var(--azul));
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            color: var(--dorado);
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo span {
+            color: var(--dorado);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('src/fondo_carnaval.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            margin-bottom: 50px;
+        }
+
+        .hero h2 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            color: var(--amarillo);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .date-badge {
+            display: inline-block;
+            background: linear-gradient(to right, var(--rosa), var(--morado));
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Secciones */
+        section {
+            margin-bottom: 70px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            display: inline-block;
+            font-size: 2.5rem;
+            color: var(--azul);
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(to right, var(--verde), var(--amarillo));
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+
+        /* Cultura */
+        .cultura {
+            background-color: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .cultura-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .cultura-text {
+            flex: 1;
+        }
+
+        .cultura-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .cultura-img {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .cultura-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Sedes */
+        .sedes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .sede-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .sede-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .sede-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .sede-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .sede-card:hover .sede-img img {
+            transform: scale(1.1);
+        }
+
+        .sede-info {
+            padding: 25px;
+        }
+
+        .sede-info h3 {
+            color: var(--azul);
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .sede-info p {
+            color: #666;
+        }
+
+        /* Cronograma */
+        .cronograma-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tab-btn {
+            background-color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--azul);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-btn:hover {
+            background-color: var(--amarillo);
+            color: var(--azul);
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(to right, var(--rosa), var(--morado));
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .actividad {
+            border-left: 5px solid var(--verde);
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        .actividad:last-child {
+            margin-bottom: 0;
+        }
+
+        .actividad h4 {
+            color: var(--azul);
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .actividad .fecha {
+            color: var(--rosa);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, var(--verde), var(--azul));
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--amarillo);
+        }
+
+        .footer-column p, .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--amarillo);
+            color: var(--azul);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .cultura-content {
+                flex-direction: column;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .cultura, .tab-content {
+                padding: 30px 20px;
+            }
+            
+            .hero {
+                padding: 70px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-crown"></i>
+                <h1>Carnaval <span>Brasil 2026</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#cultura">Cultura</a></li>
+                    <li><a href="#sedes">Sedes</a></li>
+                    <li><a href="#cronograma">Cronograma</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>¡Viva el Carnaval de Brasil 2026!</h2>
+            <p>La mayor fiesta del planeta está por comenzar. Prepárate para vivir la experiencia más vibrante, colorida y emocionante en las principales ciudades de Brasil. Samba, alegría y cultura se fusionan en esta celebración única.</p>
+            <div class="date-badge">
+                <i class="fas fa-calendar-alt"></i> 21 al 26 de Febrero de 2026
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Cultura -->
+    <section id="cultura" class="container">
+        <div class="section-title">
+            <h2>Cultura y Tradición</h2>
+        </div>
+        <div class="cultura">
+            <div class="cultura-content">
+                <div class="cultura-text">
+                    <p>El Carnaval de Brasil es la celebración cultural más importante del país, una fusión de tradiciones indígenas, africanas y europeas que se remonta al siglo XVIII. Más que una simple fiesta, es una expresión de identidad nacional, diversidad y alegría.</p>
+                    <p>La celebración tiene sus raíces en la tradición católica de despedirse de los placeres carnales antes de la Cuaresma, pero en Brasil evolucionó incorporando elementos de las culturas africanas traídas por los esclavos, dando origen a un evento único en el mundo.</p>
+                    <p>Hoy, el Carnaval es un espectáculo de música, danza, creatividad y color que atrae a millones de visitantes cada año. Las escuelas de samba, los blocos callejeros y los desfiles elaborados transforman las ciudades en un gran escenario de fiesta y expresión cultural.</p>
+                </div>
+                <div class="cultura-img">
+                    <img src="src/cultura_carnaval.jpg" alt="Cultura del Carnaval">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sedes -->
+    <section id="sedes" class="container">
+        <div class="section-title">
+            <h2>Sedes Principales</h2>
+        </div>
+        <div class="sedes-container">
+            <div class="sede-card">
+                <div class="sede-img">
+                    <img src="src/riodejaneiro.jpg" alt="Río de Janeiro">
+                </div>
+                <div class="sede-info">
+                    <h3>Río de Janeiro</h3>
+                    <p>El Carnaval de Río es el más famoso del mundo, con el espectacular desfile de las escuelas de samba en el Sambódromo. Más de 2 millones de personas disfrutan de las calles cada día.</p>
+                </div>
+            </div>
+            <div class="sede-card">
+                <div class="sede-img">
+                    <img src="src/salvador_bahia.jpg" alt="Salvador de Bahía">
+                </div>
+                <div class="sede-info">
+                    <h3>Salvador de Bahía</h3>
+                    <p>Conocido por los "trios eléctricos" y la influencia afrobrasileña, el Carnaval de Salvador es la mayor fiesta callejera del mundo, con más de 2,5 millones de participantes.</p>
+                </div>
+            </div>
+            <div class="sede-card">
+                <div class="sede-img">
+                    <img src="src/saopaulo.jpg" alt="São Paulo">
+                </div>
+                <div class="sede-info">
+                    <h3>São Paulo</h3>
+                    <p>El Carnaval paulista rivaliza con el de Río en espectacularidad. El desfile en el Sambódromo de Anhembi presenta escuelas de samba con elaboradas coreografías y carros alegóricos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Cronograma -->
+    <section id="cronograma" class="container">
+        <div class="section-title">
+            <h2>Cronograma de Actividades</h2>
+        </div>
+        
+        <div class="cronograma-tabs">
+            <button class="tab-btn active" data-tab="rio">Río de Janeiro</button>
+            <button class="tab-btn" data-tab="salvador">Salvador</button>
+            <button class="tab-btn" data-tab="sao-paulo">São Paulo</button>
+        </div>
+        
+        <div id="rio" class="tab-content active">
+            <div class="actividad">
+                <h4>Desfile de las Escuelas de Samba - Grupo Especial</h4>
+                <span class="fecha">21 y 22 de Febrero - 21:00h</span>
+                <p>Las principales escuelas de samba compiten en el Sambódromo con carros alegóricos, miles de bailarines y trajes espectaculares. Cada escuela presenta un tema diferente con música original.</p>
+            </div>
+            <div class="actividad">
+                <h4>Blocos Callejeros en Copacabana</h4>
+                <span class="fecha">22 al 25 de Febrero - Todo el día</span>
+                <p>Más de 50 blocos (grupos callejeros) toman las calles de Copacabana con música en vivo, disfraces y mucha diversión. Los más famosos son "Simpatia é Quase Amor" y "Carmelitas".</p>
+            </div>
+            <div class="actividad">
+                <h4>Concurso de Samba-enredo</h4>
+                <span class="fecha">23 de Febrero - 19:00h</span>
+                <p>Competencia de las mejores composiciones de samba-enredo (tema del desfile) en la Plaza de la Apoteosis. Participan los compositores de todas las escuelas de samba.</p>
+            </div>
+        </div>
+        
+        <div id="salvador" class="tab-content">
+            <div class="actividad">
+                <h4>Circuito Barra-Ondina</h4>
+                <span class="fecha">21 al 26 de Febrero - 18:00h a 06:00h</span>
+                <p>El famoso circuito con "trios eléctricos" (camiones con bandas en vivo) recorre la costa de Barra a Ondina. Artistas como Ivete Sangalo, Claudia Leitte y Daniela Mercury lideran los trios.</p>
+            </div>
+            <div class="actividad">
+                <h4>Desfile de los Afoxés</h4>
+                <span class="fecha">23 de Febrero - 16:00h</span>
+                <p>Grupos que preservan las tradiciones africanas desfilan por el Pelourinho con música de percusión y cánticos en yoruba. El más famoso es "Filhos de Gandhy".</p>
+            </div>
+            <div class="actividad">
+                <h4>Fiesta en Pelourinho</h4>
+                <span class="fecha">24 y 25 de Febrero - Todo el día</span>
+                <p>El centro histórico se transforma en un gran escenario con múltiples palcos, música en vivo, capoeira, comida bahiana y artesanías. Ambiente familiar y cultural.</p>
+            </div>
+        </div>
+        
+        <div id="sao-paulo" class="tab-content">
+            <div class="actividad">
+                <h4>Desfile en el Sambódromo de Anhembi</h4>
+                <span class="fecha">21 y 22 de Febrero - 21:00h</span>
+                <p>Las escuelas de samba de São Paulo presentan sus espectáculos en el Sambódromo con temas innovadores y una producción impresionante. Escuelas como Vai-Vai y Mancha Verde son las favoritas.</p>
+            </div>
+            <div class="actividad">
+                <h4>Bloques en Avenida Paulista</h4>
+                <span class="fecha">22 al 25 de Febrero - 14:00h a 22:00h</span>
+                <p>La principal avenida de São Paulo se cierra al tráfico para recibir los principales blocos de la ciudad. "Bloco do Sargento Pimenta" (tributo a Beatles) es el más popular.</p>
+            </div>
+            <div class="actividad">
+                <h4>Fiesta de los Niños</h4>
+                <span class="fecha">23 de Febrero - 10:00h a 16:00h</span>
+                <p>Evento especial para familias en el Parque Ibirapuera con actividades infantiles, talleres de máscaras, música adaptada y desfile de niños disfrazados.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Carnaval Brasil 2026</h3>
+                    <p>La mayor celebración cultural del planeta. Una experiencia única de música, color y alegría que refleja la diversidad y el espíritu festivo del pueblo brasileño.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-X"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#cultura" style="color: white; text-decoration: none;">Cultura y Tradición</a></li>
+                        <li><a href="#sedes" style="color: white; text-decoration: none;">Sedes Principales</a></li>
+                        <li><a href="#cronograma" style="color: white; text-decoration: none;">Cronograma</a></li>
+                        <li><a href="#contacto" style="color: white; text-decoration: none;">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Ministerio de Turismo de Brasil</p>
+                    <p><i class="fas fa-phone"></i> +55 21 99999-9999</p>
+                    <p><i class="fas fa-envelope"></i> info@carnavalbrasil2026.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Carnaval de Brasil. Todos los derechos reservados. | Diseñado con ❤️ y 🎉 para la mayor fiesta del mundo.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Funcionalidad para las pestañas del cronograma
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Remover clase active de todos los botones y contenidos
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Agregar clase active al botón clickeado y al contenido correspondiente
+                    this.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Navegación suave
+            document.querySelectorAll('nav a, .footer-column a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if(this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if(targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Efecto de animación al hacer scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Aplicar animación a las tarjetas de sedes
+            document.querySelectorAll('.sede-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+            
+            // Aplicar animación a las actividades
+            document.querySelectorAll('.actividad').forEach((actividad, index) => {
+                actividad.style.opacity = '0';
+                actividad.style.transform = 'translateX(-20px)';
+                actividad.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+                observer.observe(actividad);
+            });
+            
+            // Inicializar algunas animaciones
+            setTimeout(() => {
+                document.querySelectorAll('.sede-card, .actividad').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0) translateX(0)';
+                });
+            }, 300);
+        });
+    </script>
+</body>
+</html>
