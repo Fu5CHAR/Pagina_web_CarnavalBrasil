@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carnaval de Brasil 2026 - La Mayor Fiesta del Mundo</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -95,7 +94,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('src/images/fondo_carnaval.jpg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -416,7 +415,7 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <i class="fas fa-crown"></i>
+                <img src="src\icons\fire.svg" alt="Icono fire" class='fire_icon'>
                 <h1>Carnaval <span>Brasil 2026</span></h1>
             </div>
             <nav>
@@ -436,7 +435,7 @@
             <h2>¡Viva el Carnaval de Brasil 2026!</h2>
             <p>La mayor fiesta del planeta está por comenzar. Prepárate para vivir la experiencia más vibrante, colorida y emocionante en las principales ciudades de Brasil. Samba, alegría y cultura se fusionan en esta celebración única.</p>
             <div class="date-badge">
-                <i class="fas fa-calendar-alt"></i> 21 al 26 de Febrero de 2026
+                <img src="src\icons\clipboard.svg" alt="clipboard" class="clipboard-icon"> <span>21 al 26 de Febrero de 2026</span>
             </div>
         </div>
     </section>
@@ -454,7 +453,7 @@
                     <p>Hoy, el Carnaval es un espectáculo de música, danza, creatividad y color que atrae a millones de visitantes cada año. Las escuelas de samba, los blocos callejeros y los desfiles elaborados transforman las ciudades en un gran escenario de fiesta y expresión cultural.</p>
                 </div>
                 <div class="cultura-img">
-                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Cultura del Carnaval">
+                    <img src="src/images/cultura_carnaval.jpg" alt="Cultura del Carnaval">
                 </div>
             </div>
         </div>
@@ -468,7 +467,7 @@
         <div class="sedes-container">
             <div class="sede-card">
                 <div class="sede-img">
-                    <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Río de Janeiro">
+                    <img src="src/images/riodejaneiro.jpg" alt="Río de Janeiro">
                 </div>
                 <div class="sede-info">
                     <h3>Río de Janeiro</h3>
@@ -477,7 +476,7 @@
             </div>
             <div class="sede-card">
                 <div class="sede-img">
-                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Salvador de Bahía">
+                    <img src="src/images/salvador_bahia.jpg" alt="Salvador de Bahía">
                 </div>
                 <div class="sede-info">
                     <h3>Salvador de Bahía</h3>
@@ -486,7 +485,7 @@
             </div>
             <div class="sede-card">
                 <div class="sede-img">
-                    <img src= "https://images.unsplash.com/photo-1543059080-f9b1272213d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="São Paulo">
+                    <img src="src/images/saopaulo.jpg" alt="São Paulo">
                 </div>
                 <div class="sede-info">
                     <h3>São Paulo</h3>
@@ -571,10 +570,14 @@
                     <h3>Carnaval Brasil 2026</h3>
                     <p>La mayor celebración cultural del planeta. Una experiencia única de música, color y alegría que refleja la diversidad y el espíritu festivo del pueblo brasileño.</p>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon">
+                            <img src="src\icons\facebook2.svg" alt="Facebook" class="social-icon-img"></a>
+                        <a href="#" class="social-icon">
+                            <img src="src\icons\instagram.svg" alt="Instagram" class="social-icon-img"></a>
+                        <a href="#" class="social-icon">
+                            <img src="src\icons\twitter.svg" alt="Twitter" class="social-icon-img"></a>
+                        <a href="#" class="social-icon">
+                            <img src="src\icons\youtube.svg" alt="YouTube" class="social-icon-img"></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -588,9 +591,12 @@
                 </div>
                 <div class="footer-column">
                     <h3>Contacto</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Ministerio de Turismo de Brasil</p>
-                    <p><i class="fas fa-phone"></i> +55 21 99999-9999</p>
-                    <p><i class="fas fa-envelope"></i> info@carnavalbrasil2026.com</p>
+                    <div class="contacto-info">
+                    <img src="src\icons\location.svg"><span> Ministerio de Turismo de Brasil</span>
+                    <div class="contacto-info">
+                        <img src="src\icons\phone.svg"><span> +55 21 99999-9999</span>
+                    <div class="contacto-inof">
+                        <img src="src\icons\mail.svg"><span> info@carnavalbrasil2026.com</span>
                 </div>
             </div>
             <div class="copyright">
